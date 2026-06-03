@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Kode+Mono:wght@400..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ========== NAV ========== -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="logo" onclick="switchTab('beranda')">M<span>.</span>ichael</div>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="beranda" onclick="switchTab('beranda')"><i
+                        class="fa-solid fa-house"></i> Beranda</button>
+                <button class="tab-btn" data-tab="tentang" onclick="switchTab('tentang')"><i
+                        class="fa-solid fa-user"></i> Tentang</button>
+                <button class="tab-btn" data-tab="pengalaman" onclick="switchTab('pengalaman')"><i
+                        class="fa-solid fa-briefcase"></i> Pengalaman</button>
+                <button class="tab-btn" data-tab="sertifikat" onclick="switchTab('sertifikat')"><i
+                        class="fa-solid fa-certificate"></i> Sertifikat</button>
+                <button class="tab-btn" data-tab="skill" onclick="switchTab('skill')"><i class="fa-solid fa-code"></i>
+                    Skill</button>
+                <button class="tab-btn" data-tab="kontak" onclick="switchTab('kontak')"><i
+                        class="fa-solid fa-envelope"></i> Kontak</button>
+            </div>
+            <button class="hamburger" onclick="openMobile()"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- ========== MOBILE MENU ========== -->
+    <div class="mobile-overlay" id="overlay" onclick="closeMobile()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" onclick="closeMobile()"><i class="fa-solid fa-xmark"></i></button>
+        <div style="clear:both"></div>
+        <button class="mobile-link active" data-tab="beranda" onclick="switchTab('beranda');closeMobile()"><i
+                class="fa-solid fa-house"></i> Beranda</button>
+        <button class="mobile-link" data-tab="tentang" onclick="switchTab('tentang');closeMobile()"><i
+                class="fa-solid fa-user"></i> Tentang Saya</button>
+        <button class="mobile-link" data-tab="pengalaman" onclick="switchTab('pengalaman');closeMobile()"><i
+                class="fa-solid fa-briefcase"></i> Pengalaman</button>
+        <button class="mobile-link" data-tab="sertifikat" onclick="switchTab('sertifikat');closeMobile()"><i
+                class="fa-solid fa-certificate"></i> Sertifikat</button>
+        <button class="mobile-link" data-tab="skill" onclick="switchTab('skill');closeMobile()"><i
+                class="fa-solid fa-code"></i> Skill</button>
+        <button class="mobile-link" data-tab="kontak" onclick="switchTab('kontak');closeMobile()"><i
+                class="fa-solid fa-envelope"></i> Kontak</button>
+    </div>
+
+    <!-- ========== BERANDA ========== -->
+    <div class="page active visible" id="page-beranda">
+        <div class="hero">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <div class="dot"></div> Open to Work
+                </div>
+                <h1 class="hero-name">Halo,<br>Saya <span class="grad">Michael Elfauz (Web 3)</span></h1>
+                <p class="hero-desc">Mahasiswa Informatika yang antusias dalam pengembangan web modern, teknologi
+                    open-source, dan menciptakan solusi digital yang berdampak nyata.</p>
+                <div class="hero-btns">
+                    <button class="btn-primary" onclick="switchTab('kontak')"><i class="fa-solid fa-paper-plane"></i>
+                        Hubungi Saya</button>
+                    <button class="btn-secondary" onclick="switchTab('pengalaman')"><i
+                            class="fa-solid fa-file-lines"></i> Pengalaman</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-img-wrapper">
+                    <img src="image/michael2.jpeg" alt="Foto Profil">
+                </div>
+                <div class="float-badge b1"><i class="fa-solid fa-code"></i> Frontend Dev</div>
+                <div class="float-badge b2"><i class="fa-solid fa-graduation-cap"></i> Cyber Security</div>
+            </div>
+        </div>
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-num" data-target="15">0<span class="plus">+</span></div>
+                <div class="stat-label">Proyek</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num" data-target="8">0<span class="plus">+</span></div>
+                <div class="stat-label">Sertifikat</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num" data-target="16">0<span class="plus">+</span></div>
+                <div class="stat-label">Tech Stack</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num" data-target="25">0<span class="plus">+</span></div>
+                <div class="stat-label">Open Source</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== TENTANG ========== -->
+    <div class="page" id="page-tentang">
+        <div class="section-label">Tentang Saya</div>
+        <h2 class="section-title">Kenali Saya Lebih <span class="accent">Dekat</span></h2>
+        <div class="about-grid">
+            <div class="about-photo">
+                <img src="image/michael.jpeg" alt="Foto">
+            </div>
+            <div class="about-content">
+                <p>Saya adalah mahasiswa yang bersekolah di <strong>SMKn 1 Nglegok</strong> di Indonesia. Memiliki
+                    ketertarikan mendalam pada dunia pengembangan web dan cyber security.</p>
+                <p>Sejak awal bersekolah di SMKn 1 Nglegok, saya aktif belajar berbagai teknologi web mulai dari HTML,
+                    CSS, JavaScript hingga framework modern seperti React dan Next.js dan mengenai cyber security. Saya
+                    percaya bahwa teknologi dapat menjadi solusi untuk berbagai permasalahan di masyarakat.</p>
+                <p>Di luar akademik, saya juga mengikuti berbagai kompetisi dan kegiatan yang berkaitan dengan
+                    teknologi.</p>
+                <div class="info-grid">
+                    <div class="info-item"><i class="fa-solid fa-user"></i>
+                        <div>
+                            <div class="info-label">Nama</div>
+                            <div class="info-value">Michael Elfauz</div>
+                        </div>
+                    </div>
+                    <div class="info-item"><i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <div class="info-label">Lokasi</div>
+                            <div class="info-value">Garum, Indonesia</div>
+                        </div>
+                    </div>
+                    <div class="info-item"><i class="fa-solid fa-graduation-cap"></i>
+                        <div>
+                            <div class="info-label">Pendidikan</div>
+                            <div class="info-value">SMKn 1 Nglegok</div>
+                        </div>
+                    </div>
+                    <div class="info-item"><i class="fa-solid fa-calendar"></i>
+                        <div>
+                            <div class="info-label">Kelas</div>
+                            <div class="info-value">3 SMK</div>
+                        </div>
+                    </div>
+                    <div class="info-item"><i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <div class="info-label">Email</div>
+                            <div class="info-value">michael@student.ac.id</div>
+                        </div>
+                    </div>
+                    <div class="info-item"><i class="fa-solid fa-language"></i>
+                        <div>
+                            <div class="info-label">Bahasa</div>
+                            <div class="info-value">Indonesia, English</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== PENGALAMAN ========== -->
+    <div class="page" id="page-pengalaman">
+        <div class="section-label">Pengalaman</div>
+        <h2 class="section-title">Perjalanan <span class="accent">Saya</span></h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot red"></div>
+                <div class="timeline-card">
+                    <span class="timeline-date red">2024 — Sekarang</span>
+                    <div class="timeline-role">Frontend Developer Intern</div>
+                    <div class="timeline-company red">PT Teknologi Nusantara</div>
+                    <div class="timeline-desc">Mengembangkan antarmuka pengguna untuk platform SaaS menggunakan React
+                        dan TypeScript. Berkolaborasi dengan tim desain dan backend untuk implementasi fitur baru yang
+                        digunakan oleh 10.000+ pengguna aktif.</div>
+                    <div class="timeline-tags"><span class="timeline-tag">React</span><span
+                            class="timeline-tag">TypeScript</span><span class="timeline-tag">Tailwind CSS</span><span
+                            class="timeline-tag">REST API</span></div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot purple"></div>
+                <div class="timeline-card">
+                    <span class="timeline-date purple">2023 — 2024</span>
+                    <div class="timeline-role">Mengikuti komunitas IT</div>
+                    <div class="timeline-company purple">BEM Fakultas Ilmu Komputer</div>
+                    <div class="timeline-desc">Memimpin divisi IT dalam mengembangkan website organisasi dan sistem
+                        informasi akademik. Mengelola tim sebanyak 8 anggota dan mengadakan 5 workshop teknologi untuk
+                        200+ peserta.</div>
+                    <div class="timeline-tags"><span class="timeline-tag">Leadership</span><span
+                            class="timeline-tag">Next.js</span><span class="timeline-tag">PostgreSQL</span><span
+                            class="timeline-tag">Project Management</span></div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot blue"></div>
+                <div class="timeline-card">
+                    <span class="timeline-date blue">2023</span>
+                    <div class="timeline-role">Web Developer Freelance</div>
+                    <div class="timeline-company blue">Self-Employed</div>
+                    <div class="timeline-desc">Mengerjakan proyek website untuk UMKM lokal dan startup. Membangun
+                        landing page, company profile, dan e-commerce sederhana dengan teknologi modern untuk 10+ klien.
+                    </div>
+                    <div class="timeline-tags"><span class="timeline-tag">HTML/CSS</span><span
+                            class="timeline-tag">JavaScript</span><span class="timeline-tag">PHP</span><span
+                            class="timeline-tag">WordPress</span></div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot gray"></div>
+                <div class="timeline-card">
+                    <span class="timeline-date gray">2022</span>
+                    <div class="timeline-role">Volunteer Google DevFest</div>
+                    <div class="timeline-company gray">GDG Jakarta</div>
+                    <div class="timeline-desc">Menjadi volunteer dalam acara Google Developer Groups DevFest Jakarta
+                        2022. Membantu koordinasi teknis dan mendukung kelancaran acara dengan 500+ peserta.</div>
+                    <div class="timeline-tags"><span class="timeline-tag">Event</span><span
+                            class="timeline-tag">Networking</span><span class="timeline-tag">Community</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== SERTIFIKAT ========== -->
+    <div class="page" id="page-sertifikat">
+        <div class="section-label">Sertifikat</div>
+        <h2 class="section-title">Licenses & <span class="accent">Certifications</span></h2>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div class="cert-top">
+                    <div class="cert-icon blue"><i class="fa-solid fa-cloud"></i></div>
+                    <div>
+                        <div class="cert-title">Google Cloud Fundamentals</div>
+                        <div class="cert-issuer">Google Cloud</div>
+                    </div>
+                </div>
+                <div class="cert-meta"><i class="fa-solid fa-calendar"></i> Des 2024 <span class="sep">•</span> <i
+                        class="fa-solid fa-shield-halved"></i> Verified</div>
+                <div class="cert-tags"><span class="cert-tag blue">Cloud</span><span class="cert-tag blue">GCP</span>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-top">
+                    <div class="cert-icon yellow"><i class="fa-solid fa-database"></i></div>
+                    <div>
+                        <div class="cert-title">Meta Frontend Developer Professional</div>
+                        <div class="cert-issuer">Coursera — Meta</div>
+                    </div>
+                </div>
+                <div class="cert-meta"><i class="fa-solid fa-calendar"></i> Agu 2024 <span class="sep">•</span> <i
+                        class="fa-solid fa-shield-halved"></i> Verified</div>
+                <div class="cert-tags"><span class="cert-tag yellow">Frontend</span><span
+                        class="cert-tag yellow">React</span></div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-top">
+                    <div class="cert-icon green"><i class="fa-solid fa-code"></i></div>
+                    <div>
+                        <div class="cert-title">JavaScript Algorithms & Data Structures</div>
+                        <div class="cert-issuer">freeCodeCamp</div>
+                    </div>
+                </div>
+                <div class="cert-meta"><i class="fa-solid fa-calendar"></i> Mar 2024 <span class="sep">•</span> <i
+                        class="fa-solid fa-shield-halved"></i> Verified</div>
+                <div class="cert-tags"><span class="cert-tag green">JavaScript</span><span
+                        class="cert-tag green">DSA</span></div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-top">
+                    <div class="cert-icon purple"><i class="fa-solid fa-terminal"></i></div>
+                    <div>
+                        <div class="cert-title">Linux Foundation Certified IT Associate</div>
+                        <div class="cert-issuer">The Linux Foundation</div>
+                    </div>
+                </div>
+                <div class="cert-meta"><i class="fa-solid fa-calendar"></i> Jan 2024 <span class="sep">•</span> <i
+                        class="fa-solid fa-shield-halved"></i> Verified</div>
+                <div class="cert-tags"><span class="cert-tag purple">Linux</span><span
+                        class="cert-tag purple">Sysadmin</span></div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-top">
+                    <div class="cert-icon cyan"><i class="fa-solid fa-palette"></i></div>
+                    <div>
+                        <div class="cert-title">Responsive Web Design</div>
+                        <div class="cert-issuer">freeCodeCamp</div>
+                    </div>
+                </div>
+                <div class="cert-meta"><i class="fa-solid fa-calendar"></i> Okt 2023 <span class="sep">•</span> <i
+                        class="fa-solid fa-shield-halved"></i> Verified</div>
+                <div class="cert-tags"><span class="cert-tag cyan">HTML/CSS</span><span
+                        class="cert-tag cyan">Responsive</span></div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-top">
+                    <div class="cert-icon orange"><i class="fa-solid fa-fire"></i></div>
+                    <div>
+                        <div class="cert-title">HackerRank Problem Solving (Gold)</div>
+                        <div class="cert-issuer">HackerRank</div>
+                    </div>
+                </div>
+                <div class="cert-meta"><i class="fa-solid fa-calendar"></i> Jul 2023 <span class="sep">•</span> <i
+                        class="fa-solid fa-shield-halved"></i> Verified</div>
+                <div class="cert-tags"><span class="cert-tag orange">Problem Solving</span><span
+                        class="cert-tag orange">Algorithm</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== SKILL ========== -->
+    <div class="page" id="page-skill">
+        <div class="section-label">Keahlian</div>
+        <h2 class="section-title">Tech Stack & <span class="accent">Skills</span></h2>
+        <div class="skill-category">
+            <div class="skill-cat-title"><i class="fa-solid fa-display"></i> Frontend Development</div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-card-icon html"><i class="fa-brands fa-html5"></i></div>
+                    <div class="skill-card-name">HTML5</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill html" data-width="95"></div>
+                    </div>
+                    <div class="skill-pct">95%</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-icon css"><i class="fa-brands fa-css3-alt"></i></div>
+                    <div class="skill-card-name">CSS3</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill css" data-width="90"></div>
+                    </div>
+                    <div class="skill-pct">90%</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-icon js"><i class="fa-brands fa-js"></i></div>
+                    <div class="skill-card-name">JavaScript</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill js" data-width="85"></div>
+                    </div>
+                    <div class="skill-pct">85%</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-icon react"><i class="fa-brands fa-react"></i></div>
+                    <div class="skill-card-name">React</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill react" data-width="80"></div>
+                    </div>
+                    <div class="skill-pct">80%</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-icon tailwind"><i class="fa-solid fa-wind"></i></div>
+                    <div class="skill-card-name">Tailwind</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill tailwind" data-width="88"></div>
+                    </div>
+                    <div class="skill-pct">88%</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-icon nextjs"><i class="fa-solid fa-n"></i></div>
+                    <div class="skill-card-name">Next.js</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill nextjs" data-width="72"></div>
+                    </div>
+                    <div class="skill-pct">72%</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-icon ts"><i class="fa-solid fa-t"></i></div>
+                    <div class="skill-card-name">TypeScript</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill ts" data-width="70"></div>
+                    </div>
+                    <div class="skill-pct">70%</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-icon node"><i class="fa-brands fa-node-js"></i></div>
+                    <div class="skill-card-name">Node.js</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill node" data-width="68"></div>
+                    </div>
+                    <div class="skill-pct">68%</div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-category">
+            <div class="skill-cat-title"><i class="fa-solid fa-gear"></i> Tools & Platform</div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-card-icon vscode"><i class="fa-solid fa-code"></i></div>
+                    <div class="skill-card-name">VS Code</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill vscode" data-width="92"></div>
+                    </div>
+                    <div class="skill-pct">92%</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-icon git"><i class="fa-brands fa-git-alt"></i></div>
+                    <div class="skill-card-name">Git</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill git" data-width="85"></div>
+                    </div>
+                    <div class="skill-pct">85%</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-icon linux"><i class="fa-brands fa-linux"></i></div>
+                    <div class="skill-card-name">Linux</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill linux" data-width="78"></div>
+                    </div>
+                    <div class="skill-pct">78%</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-icon github"><i class="fa-brands fa-github"></i></div>
+                    <div class="skill-card-name">GitHub</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill github" data-width="88"></div>
+                    </div>
+                    <div class="skill-pct">88%</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-icon docker"><i class="fa-brands fa-docker"></i></div>
+                    <div class="skill-card-name">Docker</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill docker" data-width="60"></div>
+                    </div>
+                    <div class="skill-pct">60%</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-icon figma"><i class="fa-brands fa-figma"></i></div>
+                    <div class="skill-card-name">Figma</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill figma" data-width="72"></div>
+                    </div>
+                    <div class="skill-pct">72%</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-icon mysql"><i class="fa-solid fa-database"></i></div>
+                    <div class="skill-card-name">MySQL</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill mysql" data-width="75"></div>
+                    </div>
+                    <div class="skill-pct">75%</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card-icon python"><i class="fa-brands fa-python"></i></div>
+                    <div class="skill-card-name">Python</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill python" data-width="65"></div>
+                    </div>
+                    <div class="skill-pct">65%</div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-category">
+            <div class="skill-cat-title"><i class="fa-solid fa-brain"></i> Soft Skills</div>
+            <div class="soft-skills">
+                <span class="soft-tag">Problem Solving</span>
+                <span class="soft-tag">Team Collaboration</span>
+                <span class="soft-tag">Communication</span>
+                <span class="soft-tag">Time Management</span>
+                <span class="soft-tag">Fast Learner</span>
+                <span class="soft-tag">Adaptive</span>
+                <span class="soft-tag">Critical Thinking</span>
+                <span class="soft-tag">Technical Writing</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== KONTAK ========== -->
+    <div class="page" id="page-kontak">
+        <div class="section-label">Kontak</div>
+        <h2 class="section-title">Mari <span class="accent">Terhubung</span></h2>
+        <div class="contact-grid">
+            <a href="https://wa.me/6281234567890" target="_blank" class="contact-link">
+                <div class="contact-link-icon wa"><i class="fa-brands fa-whatsapp"></i></div>
+                <div class="contact-link-text">
+                    <div class="cl-name">WhatsApp</div>
+                    <div class="cl-detail">+62 812-3456-7890</div>
+                </div>
+                <i class="fa-solid fa-arrow-right arrow"></i>
+            </a>
+            <a href="https://github.com/michaelelfauz" target="_blank" class="contact-link">
+                <div class="contact-link-icon gh"><i class="fa-brands fa-github"></i></div>
+                <div class="contact-link-text">
+                    <div class="cl-name">GitHub</div>
+                    <div class="cl-detail">github.com/michaelelfauz</div>
+                </div>
+                <i class="fa-solid fa-arrow-right arrow"></i>
+            </a>
+            <a href="https://linkedin.com/in/michaelelfauz" target="_blank" class="contact-link">
+                <div class="contact-link-icon li"><i class="fa-brands fa-linkedin-in"></i></div>
+                <div class="contact-link-text">
+                    <div class="cl-name">LinkedIn</div>
+                    <div class="cl-detail">linkedin.com/in/michaelelfauz</div>
+                </div>
+                <i class="fa-solid fa-arrow-right arrow"></i>
+            </a>
+            <a href="https://facebook.com/michaelelfauz" target="_blank" class="contact-link">
+                <div class="contact-link-icon fb"><i class="fa-brands fa-facebook-f"></i></div>
+                <div class="contact-link-text">
+                    <div class="cl-name">Facebook</div>
+                    <div class="cl-detail">fb.com/mfikri</div>
+                </div>
+                <i class="fa-solid fa-arrow-right arrow"></i>
+            </a>
+        </div>
+        <div class="contact-form">
+            <div class="form-title"><i class="fa-solid fa-paper-plane"></i> Kirim Pesan</div>
+            <form id="contactForm">
+                <div class="form-row">
+                    <div class="form-group"><label class="form-label">Nama</label><input type="text" class="form-input"
+                            placeholder="Nama lengkap" required></div>
+                    <div class="form-group"><label class="form-label">Email</label><input type="email"
+                            class="form-input" placeholder="email@contoh.com" required></div>
+                </div>
+                <div class="form-group"><label class="form-label">Subjek</label><input type="text" class="form-input"
+                        placeholder="Subjek pesan" required></div>
+                <div class="form-group"><label class="form-label">Pesan</label><textarea class="form-textarea"
+                        placeholder="Tulis pesan Anda di sini..." required></textarea></div>
+                <button type="submit" class="form-submit"><i class="fa-solid fa-paper-plane"></i> Kirim Pesan</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i> Pesan berhasil dikirim!</div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-text">© 2026 Michael Elfauz. All rights reserved.</div>
+            <div class="footer-socials">
+                <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://wa.me/6281234567890" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
