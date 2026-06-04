@@ -3,16 +3,16 @@
 
 body {
     font-family: 'Kode Mono', 'Inconsolata', monospace;
-    background: #0f172a;
-    color: #e0e0e0;
+    background: #6b84c0;
+    color: #664c4c;
     min-height: 100vh;
     overflow-x: hidden;
 }
 
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #0f172a; }
-::-webkit-scrollbar-thumb { background: #1e3a5f; border-radius: 8px; }
-::-webkit-scrollbar-thumb:hover { background: #38bdf8; }
+::-webkit-scrollbar-track { background: #4b5a7e; }
+::-webkit-scrollbar-thumb { background: #4c5e75; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #5f737a; }
 
 /* ========== NAVIGATION ========== */
 .nav {
