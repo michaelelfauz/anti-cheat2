@@ -5,10 +5,10 @@
 - docker build -t web4_nginx .
 
 # How to run
-- docker run -d -p 8081:80 web1 web1_httpd
-- docker run -d -p 8082:80 web2 web2_httpd
-- docker run -d -p 8083:80 web3 web3_nginx
-- docker run -d -p 8084:80 web4 web4_nginx
+- docker run -d -p 8081:80 web1_httpd
+- docker run -d -p 8082:80 web2_httpd
+- docker run -d -p 8083:80 web3_nginx
+- docker run -d -p 8084:80 web4_nginx
 
 # How to stop
 - docker stop web1
